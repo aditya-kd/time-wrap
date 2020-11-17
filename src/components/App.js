@@ -1,15 +1,54 @@
-import React from "react"
-import Product from "./Product"
-import productsData from "./vsSchools"
+/*
 
-function App(){
-    const productComponents = productsData.map(item=>
-        <Product key={item.id} product={item}/>)
+Challenge:
+1. Convert all 3 components to be class-based
+2. Fix the small bug
 
-     return(
-            <div>
-                {productComponents}
-            </div>
-       )
+*/
+
+import React, { Component } from "react"
+
+
+// #1
+class main extends React.Component {
+    render( ){
+
+    return (
+        <div>
+            <Header username="Aditya Kumar Sharma"/>
+            <Greeting />
+        </div>    
+    )
+    }
 }
-export default App
+
+// #2
+class Header extends React.Component {
+    render (){
+    return (
+        <header>
+            <p>Welcome, {this.props.username}!</p>
+        </header>
+    )}
+}
+
+// #3
+class Greeting extends Component {
+   render(){
+    const date = new Date()
+    const hours = date.getHours()
+    let timeOfDay
+    
+    if (hours < 12) {
+        timeOfDay = "morning"
+    } else if (hours >= 12 && hours < 17) {
+        timeOfDay = "afternoon"
+    } else {
+        timeOfDay = "night"
+    }
+    return (
+        <h1>Good {timeOfDay} to you, sir or madam!</h1>
+    )
+   }
+}
+export default main
