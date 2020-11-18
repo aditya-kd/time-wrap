@@ -1,0 +1,9 @@
+.body{
+    margin: auto;
+}
+.genericDiv{
+    background-color: darkslateblue;
+    color: aliceblue;
+    align-items: center;
+    text-align: center;
+}
